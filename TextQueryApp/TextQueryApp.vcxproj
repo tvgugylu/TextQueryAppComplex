@@ -147,17 +147,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Query.cpp" />
+    <ClCompile Include="AndQuery.cpp" />
+    <ClCompile Include="OrQuery.cpp" />
     <ClCompile Include="querymain.cpp" />
     <ClCompile Include="Query_base.cpp" />
     <ClCompile Include="TextQuery.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AndQuery.h" />
+    <ClInclude Include="BinaryQuery.h" />
     <ClInclude Include="make_plural.h" />
+    <ClInclude Include="NotQuery.h" />
+    <ClInclude Include="OrQuery.h" />
     <ClInclude Include="Query.h" />
     <ClInclude Include="QueryResult.h" />
     <ClInclude Include="Query_base.h" />
     <ClInclude Include="TextQuery.h" />
+    <ClInclude Include="WordQuery.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
