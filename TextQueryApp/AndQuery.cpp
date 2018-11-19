@@ -1,6 +1,11 @@
 #include "AndQuery.h"
+#include <algorithm>
+#include <iterator>
 
-QueryResult AndQuery::eval(const TextQuery&) const
+QueryResult AndQuery::eval(const TextQuery& text) const
 {
-	throw std::logic_error("The method or operation is not implemented.");
+	auto left = lhs.eval(text), right = rhs.eval(text);
+	auto ret_lines = std::make_shared<std::set<line_no>>();
+	set_intersection(left.begin(), left.end(), right.begin(), right.end(), inserter(*ret_lines, ret_lines->begin()));
+	return QueryResult(rep(), ret_lines, left.get_file());
 }

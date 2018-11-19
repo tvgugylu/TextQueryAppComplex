@@ -25,7 +25,3 @@ private:
 	Query(std::shared_ptr<Query_base> query) :q(query) {}
 	std::shared_ptr<Query_base> q;
 };
-
-
-
-
